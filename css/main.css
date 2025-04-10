@@ -8,8 +8,7 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Links */
@@ -81,8 +80,7 @@ input::-ms-clear {
 button,
 input[type=submit] {
   display: inline-block;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   background-color: transparent;
   background: none;
   cursor: pointer;
@@ -169,50 +167,34 @@ body {
 }
 
 .col1__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 15px 15px 0 15px;
 }
 
 .col1__number {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100px;
-          flex: 1 1 100px;
+  flex: 1 1 100px;
   font-size: 4rem;
 }
 
 .col1__city {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100px;
-          flex: 1 1 100px;
+  flex: 1 1 100px;
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
 }
 
 .col1__text {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100px;
-          flex: 1 1 100px;
+  flex: 1 1 100px;
   text-align: end;
   font-size: 1.4rem;
 }
 
 .col2__container {
   padding: 15px 15px 0 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .col2__center-date > p:first-child {
@@ -226,8 +208,6 @@ body {
 }
 
 .col2__right-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
@@ -238,36 +218,21 @@ body {
 
 .col3__blocks {
   padding: 0 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
 }
 
 .col3__block {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 1;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 10px;
 }
 
 .col3__block:nth-child(3) {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  flex: 2;
 }
 
 .ol3__block-text > p {
@@ -291,49 +256,34 @@ body {
 .col3__block-north {
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .col3__block-east {
   right: 0;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .col3__block-south {
   bottom: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .col3__block-west {
   top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .col3__block-compas {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform-origin: center center;
-      -ms-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-animation: compas 3s ease-in;
-          animation: compas 3s ease-in;
-  -webkit-transform: translate(-50%, -50%) rotate(99deg);
-      -ms-transform: translate(-50%, -50%) rotate(99deg);
-          transform: translate(-50%, -50%) rotate(99deg);
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
+  animation: compas 3s ease-in;
+  transform: translate(-50%, -50%) rotate(99deg);
 }
 
 .col3__block-compas > img {
@@ -350,27 +300,18 @@ body {
 }
 
 .other-time__blocks {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 0 15px;
 }
 
 .time-block {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 1 1 auto;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 7px;
   text-align: center;
 }
 
 .time-block__img > img {
   height: 4vh;
-}
+}/*# sourceMappingURL=main.css.map */

@@ -16,25 +16,39 @@ const photosOther = {
 function getSomeData(url, nowData) {
   fetch(url).then((response) => {
     response.json().then((data) => {
-      // let string = `<div class="other-time__block time-block">
-      //             <div class="time-block__img">
-      //               <img src="${
-      //                 photosOther[data.main.toLowerCase()]
-      //               }" alt="${data.main.toLowerCase()}" />
-      //             </div>
-      //             <div class="time-block__text">
-      //               <p>Сейч.</p>
-      //             </div>
-      //             <div class="time-block__number">${data.main.temp}&deg</div>
-      //           </div>`;
+      console.log(nowData);
+      let string = `<div class="other-time__block time-block">
+                  <div class="time-block__img">
+                    <img src="${
+                      photosOther[nowData.weather[0].main.toLowerCase()]
+                    }" alt="${nowData.weather[0].main.toLowerCase()}" />
+                  </div>
+                  <div class="time-block__text">
+                    <p>Сейч.</p>
+                  </div>
+                  <div class="time-block__number">${nowData.main.temp}&deg</div>
+                </div>`;
       const date = new Date();
       const newData = data.list.filter(
         (element) =>
           element["dt_txt"].slice(0, 10) == date.toJSON().slice(0, 10)
       );
-      console.log(newData);
 
-      console.log(data);
+      
+      for (let index = 0; index < newData.length; index++) {
+        string += `<div class="other-time__block time-block">
+        <div class="time-block__img">
+          <img src="${
+            photosOther[newData[index].weather[0].main.toLowerCase()]
+          }" alt="${newData[index].weather[0].main.toLowerCase()}" />
+        </div>
+        <div class="time-block__text">
+          <p>${newData[index]["dt_txt"].split(' ')[1].slice(0, 5)}</p>
+        </div>
+        <div class="time-block__number">${(Number(newData[index].main.temp) -  273.15).toFixed(2)}&deg</div>
+      </div>`;
+      }
+      document.getElementById("time-block").innerHTML = string
     });
   });
 }
@@ -44,14 +58,16 @@ function getWeather(city = "Самарканд") {
   const searchUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&lang=ru&limit=1&appid=${api}`;
   fetch(searchUrl).then((response) => {
     response.json().then((data) => {
+      console.log(data);
       try {
         if (data.length == 0) {
           throw new Error("Такого города не существует");
         }
-        const urlCnt = `https://api.openweathermap.org/data/2.5/forecast?lat=${data[0].lat}&lon=${data[0].lon}&appid=${api}`;
+        const urlCnt = `https://api.openweathermap.org/data/2.5/forecast?metric=standart&lat=${data[0].lat}&lon=${data[0].lon}&appid=${api}`;
         const url = `http://api.openweathermap.org/data/2.5/weather?lat=${data[0].lat}&lon=${data[0].lon}&lang=ru&units=metric&appid=${api}`;
         fetch(url).then((response) => {
           response.json().then((data) => {
+            
             const date = new Date();
             const days = [
               "воскресенье",
@@ -78,10 +94,10 @@ function getWeather(city = "Самарканд") {
             ];
             document.getElementById(
               "city"
-            ).textContent = `${data.sys.country} / ${data.name}`;
+            ).textContent = `${data.sys.country} / ${city[0].toUpperCase() + city.slice(1, city.length).toLocaleLowerCase()}`;
             document.getElementById(
               "time"
-            ).textContent = `${date.getHours()}:${date.getMinutes()}`;
+            ).textContent = `${date.getHours() < 10 ? '0' + date.getHours() : date.getHours()}:${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}`;
             document.getElementById("date").textContent = `${
               days[date.getDay()]
             }, ${date.getDate()} ${
@@ -129,9 +145,10 @@ function getWeather(city = "Самарканд") {
             }deg)`;
             let type = data.weather[0].main.toLowerCase();
             main.style.backgroundImage = `url(${photos[type]})`;
+            getSomeData(urlCnt, data);
           });
         });
-        getSomeData(urlCnt, data);
+        
       } catch (e) {
         setTimeout(() => {
           alert(e.message);
