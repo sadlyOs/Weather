@@ -1,24 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
     <div class="wrapper">
-        <section class="main" id="main">
-            <div class="container">
-                <div class="container__main">
-                    <div class="container__col1 col1">
-                        <div class="col1__number"><p>8&deg</p></div>
-                        <div class="col1__text"><p>Небольшой дождь</p></div>
-                    </div>
+      <section class="main" id="main">
+        <div class="container">
+          <div class="container__search">
+            <input type="text" id="input" placeholder="Введите город" />
+          </div>
+          <div class="container__main">
+            <div class="container__col1 col1">
+              <div class="col1__container border">
+                <div class="col1__number">
+                  <p><span id="number">8</span>&deg</p>
                 </div>
+                <div class="col1__city">
+                  <p id="city">UZ/Самарканд</p>
+                </div>
+                <div class="col1__text">
+                  <p id="description">Небольшой дождь</p>
+                </div>
+              </div>
             </div>
-        </section>
+            <div class="container__col2 col2">
+              <div class="col2__container border">
+                <div class="col2__left">
+                  <div class="col2__left-text">
+                    <p>По ощущениям <span id="feels">8</span>&deg</p>
+                    <p>Скорость ветра <span id="wind"></span> м/с</p>
+                  </div>
+                </div>
+                <div class="col2__center">
+                  <div class="col2__center-date">
+                    <p id="time">14:11</p>
+                    <p id="date">суббота, 25 апреля 2015г.</p>
+                  </div>
+                </div>
+                <div class="col2__right">
+                  <div class="col2__right-text">
+                    <p>Мин <span id="tempMin">1</span>&deg</p>
+                    <p>Макс <span id="tempMax">10</span>&deg</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container__col3 col3">
+              <div class="col3__container">
+                <div class="col3__blocks border">
+                  <div class="col3__block">
+                    <div class="col3__block-icon">
+                      <img src="./img/humidity.png" alt="humidity" />
+                    </div>
+                    <div class="col3__block-text">
+                      <p>Влажность</p>
+                    </div>
+                    <div class="col3__block-number">
+                      <p id="humidity">55%</p>
+                    </div>
+                  </div>
+                  <div class="col3__block">
+                    <div class="col3__block-icon">
+                      <img src="./img/umbrella.png" alt="umbrella" />
+                    </div>
+                    <div class="col3__block-text">
+                      <p>Осадки</p>
+                    </div>
+                    <div class="col3__block-number"><p>1,2 мм</p></div>
+                  </div>
+                  <div class="col3__block">
+                    <div class="col3__block-side">
+                      <div class="col3__block-north col3__block-abs">N</div>
+                      <div class="col3__block-east col3__block-abs">E</div>
+                      <div class="col3__block-south col3__block-abs">S</div>
+                      <div class="col3__block-west col3__block-abs">W</div>
+                      <div class="col3__block-compas" id="compas">
+                        <img src="./img/line-compas.png" alt="line-compas" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col3__block">
+                    <div class="col3__block-icon">
+                      <img src="./img/thermometer.png" alt="thermometer" />
+                    </div>
+                    <div class="col3__block-text">
+                      <p>Давление</p>
+                    </div>
+                    <div class="col3__block-number">
+                      <p id="pressure">759 мм</p>
+                    </div>
+                  </div>
+                  <div class="col3__block">
+                    <div class="col3__block-icon">
+                      <img src="./img/visible.png" alt="visible" />
+                    </div>
+                    <div class="col3__block-text">
+                      <p>Видимость</p>
+                    </div>
+                    <div class="col3__block-number">
+                      <p id="visibility">10км</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container__other-time other-time">
+            <div class="other-time__container">
+              <div class="other-time__blocks" id="time-block">
+                <div class="other-time__block time-block">
+                  <div class="time-block__img">
+                    <img src="./img/other/clear.png" alt="clear" />
+                  </div>
+                  <div class="time-block__text">
+                    <p>Сейч.</p>
+                  </div>
+                  <div class="time-block__number">7&deg</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>

@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    color: $white;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    min-height: 100%;
+}
+
+.container {
+    max-width: 900px;
+    padding: 0 15px;
+    margin: 0 auto;
+}

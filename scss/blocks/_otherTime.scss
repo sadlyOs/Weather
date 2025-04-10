@@ -1,0 +1,20 @@
+.container__other-time {
+    background: $light-black;
+}
+
+.other-time__blocks {
+    display: flex;
+    padding: 0 15px;
+}
+
+.time-block {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    text-align: center;
+}
+
+.time-block__img>img {
+    height: 4vh;
+}
