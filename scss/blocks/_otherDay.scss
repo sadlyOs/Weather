@@ -1,0 +1,27 @@
+.other-day__container {
+    padding: 10px 0;
+}
+
+.other-day__blocks {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+
+.other-day__block {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+.other-day__img>img {
+    height: 4vh;
+}
+
+.other-day__number {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}

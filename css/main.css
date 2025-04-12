@@ -8,7 +8,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Links */
@@ -80,7 +81,8 @@ input::-ms-clear {
 button,
 input[type=submit] {
   display: inline-block;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   background-color: transparent;
   background: none;
   cursor: pointer;
@@ -153,12 +155,25 @@ body {
 }
 
 .main {
-  padding-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 100vh;
   background-image: url("../../img/clear.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.container__wrapper {
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .container__main {
@@ -167,34 +182,50 @@ body {
 }
 
 .col1__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 15px 15px 0 15px;
 }
 
 .col1__number {
-  flex: 1 1 100px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100px;
+          flex: 1 1 100px;
   font-size: 4rem;
 }
 
 .col1__city {
-  flex: 1 1 100px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100px;
+          flex: 1 1 100px;
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
 }
 
 .col1__text {
-  flex: 1 1 100px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100px;
+          flex: 1 1 100px;
   text-align: end;
   font-size: 1.4rem;
 }
 
 .col2__container {
   padding: 15px 15px 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .col2__center-date > p:first-child {
@@ -208,8 +239,15 @@ body {
 }
 
 .col2__right-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 20px;
+}
+
+.col3__block-compas {
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .col3 {
@@ -217,22 +255,37 @@ body {
 }
 
 .col3__blocks {
-  padding: 0 15px;
+  padding: 0 15px 10px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 
 .col3__block {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 10px;
 }
 
 .col3__block:nth-child(3) {
-  flex: 2;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
 }
 
 .ol3__block-text > p {
@@ -256,34 +309,49 @@ body {
 .col3__block-north {
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .col3__block-east {
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .col3__block-south {
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .col3__block-west {
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .col3__block-compas {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform-origin: center center;
-  transform: translate(-50%, -50%);
-  animation: compas 3s ease-in;
-  transform: translate(-50%, -50%) rotate(99deg);
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%) rotate(99deg);
+      -ms-transform: translate(-50%, -50%) rotate(99deg);
+          transform: translate(-50%, -50%) rotate(99deg);
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .col3__block-compas > img {
@@ -299,19 +367,73 @@ body {
   background: rgba(0, 0, 0, 0.507);
 }
 
+.other-time__container {
+  border-bottom: 1px solid #ffffff;
+  padding: 10px 0;
+}
+
 .other-time__blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 0 15px;
 }
 
 .time-block {
-  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 7px;
   text-align: center;
 }
 
 .time-block__img > img {
   height: 4vh;
-}/*# sourceMappingURL=main.css.map */
+}
+
+.other-day__container {
+  padding: 10px 0;
+}
+
+.other-day__blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 50px;
+}
+
+.other-day__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+
+.other-day__img > img {
+  height: 4vh;
+}
+
+.other-day__number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+}

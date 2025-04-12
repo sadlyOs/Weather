@@ -2,6 +2,11 @@
     background: $light-black;
 }
 
+.other-time__container {
+    border-bottom: 1px solid $white;
+    padding: 10px 0;
+}
+
 .other-time__blocks {
     display: flex;
     padding: 0 15px;
